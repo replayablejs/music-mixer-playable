@@ -29,15 +29,15 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@replayablejs/config": "0.1.0-alpha.4",
-    "@replayablejs/devtools": "0.1.0-alpha.4",
-    "@replayablejs/runtime": "0.1.0-alpha.4",
-    "@replayablejs/tween": "0.1.0-alpha.4"
+    "@replayablejs/config": "0.1.0-alpha.5",
+    "@replayablejs/devtools": "0.1.0-alpha.5",
+    "@replayablejs/runtime": "0.1.0-alpha.5",
+    "@replayablejs/tween": "0.1.0-alpha.5"
   },
   "devDependencies": {
-    "@replayablejs/assets": "0.1.0-alpha.4",
-    "@replayablejs/cli": "0.1.0-alpha.4",
-    "@replayablejs/export": "0.1.0-alpha.4",
+    "@replayablejs/assets": "0.1.0-alpha.5",
+    "@replayablejs/cli": "0.1.0-alpha.5",
+    "@replayablejs/export": "0.1.0-alpha.5",
     "@types/node": "^24.13.4",
     "hast-util-to-html": "^9.0.5",
     "hastscript": "^9.0.1",

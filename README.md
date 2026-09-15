@@ -104,9 +104,9 @@ Keep the high-resolution originals in the repository; Replayable handles languag
 selection, resizing, and output encoding during the build. The delivered image is
 128 × 128; its on-screen size still follows the responsive layout.
 
-## Two bundles, shared by every version
+## Bundle assignments follow the version
 
-[config/assets.ts](config/assets.ts) defines one loading split for all four versions:
+[config/assets.ts](config/assets.ts) defines the default loading split for guided versions:
 
 | Bundle    | Contents                                                              | Loading                                                 |
 | --------- | --------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -118,8 +118,9 @@ celebration, then expand to all 24 pads. **Free-play versions** show all 24 pads
 immediately, skip the tutorial and celebration, and exclude the thumbs-up asset
 from the export. Idle hints remain available in both, controlled by [config/params.ts](config/params.ts).
 
-The loading split is shared: free play still loads eight sounds in primary and
-sixteen in secondary. There are no extra waits before interaction or expansion.
+[config/versions.ts](config/versions.ts) sets `assets.bundles: {}` for free play,
+so all 24 sounds load in primary before the scene appears. Guided versions retain
+the eight/sixteen split. There are no extra waits before interaction or expansion.
 Secondary defers runtime loading and decoding; its bytes are still included in a
 standalone export. Asset exclusion, by contrast, removes the unused asset entirely.
 
@@ -137,7 +138,7 @@ one-shot effects. First Light’s choir sounds are synthesized vowel textures.
 ## Run locally
 
 Requires Node.js 24+ and pnpm 10.32.1. Replayable packages are pinned to the published
-`0.1.0-alpha.4` release; no toolkit checkout is required. The local catalog and
+`0.1.0-alpha.5` release; no toolkit checkout is required. The local catalog and
 export preview commands also require Python 3.
 
 ```sh

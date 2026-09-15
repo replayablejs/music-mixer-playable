@@ -11,10 +11,10 @@ export default {
   },
   'liquiddnb-no-tutorial': {
     params: { soundPack: 'liquiddnb', tutorial: false },
-    assets: { exclude: ['sounds/firstlight_*', 'sprites/thumbs-up-spritesheet.png'] },
+    assets: { bundles: {}, exclude: ['sounds/firstlight_*', 'sprites/thumbs-up-spritesheet.png'] },
   },
   'first-light-no-tutorial': {
     params: { soundPack: 'first-light', tutorial: false },
-    assets: { exclude: ['sounds/liquiddnb_*', 'sprites/thumbs-up-spritesheet.png'] },
+    assets: { bundles: {}, exclude: ['sounds/liquiddnb_*', 'sprites/thumbs-up-spritesheet.png'] },
   },
 } satisfies ReplayableConfigInput['versions'];
