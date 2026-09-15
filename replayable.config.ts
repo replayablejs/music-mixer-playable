@@ -13,7 +13,6 @@ import versions from './config/versions.ts';
 
 export default defineConfig({
   name: 'music-mixer-playable',
-  audio: true,
   networks,
   completion,
   params,
