@@ -13,9 +13,9 @@ and assets to produce a different creative without copying the project.
 | Liquid DnB  | [Play guided](https://replayablejs.github.io/music-mixer-playable/exports/preview_liquiddnb_en.html)   | [Play free play](https://replayablejs.github.io/music-mixer-playable/exports/preview_liquiddnb_no_tutorial_en.html)   |
 | First Light | [Play guided](https://replayablejs.github.io/music-mixer-playable/exports/preview_first_light_en.html) | [Play free play](https://replayablejs.github.io/music-mixer-playable/exports/preview_first_light_no_tutorial_en.html) |
 
-These links open English previews. The catalog includes French and Italian too.
-
-_Public links will become available after the first GitHub Pages deployment._
+These links open live English previews. The [catalog](https://replayablejs.github.io/music-mixer-playable/)
+also includes French and Italian previews, plus downloadable HTML and ZIP exports
+for every configured network. No local setup is needed to try them.
 
 | Liquid DnB                                                    | First Light                                                                            |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -210,10 +210,14 @@ Linux-generated `.site/` to GitHub Pages. A manual run from
 The deployed site includes the catalog, every browser preview, and every downloadable
 network export. Adding versions, languages, or networks requires no workflow changes.
 
-For the first deployment, create the repository and select **Settings → Pages →
-Build and deployment → Source → GitHub Actions**. Push this project to `main`.
-No deployment secret is needed; the workflow uses GitHub's built-in token with
-Pages permissions limited to the deployment job.
+The [live catalog](https://replayablejs.github.io/music-mixer-playable/) updates
+automatically after successful deployments. Follow builds and deployments in
+[GitHub Actions](https://github.com/replayablejs/music-mixer-playable/actions).
+
+To deploy your own fork, select **Settings → Pages → Build and deployment →
+Source → GitHub Actions**, then run the workflow from `main`. Update this README's
+public links to your fork's Pages URL. No deployment secret is needed; the workflow
+uses GitHub's built-in token with Pages permissions limited to the deployment job.
 
 ## Development checks
 
