@@ -2,17 +2,17 @@
   "tutorialMakeBeat": {
     "en": "Let's make a beat!",
     "it": "Creiamo un ritmo!",
-    "fr": "Créons un rythme !"
+    "fr": "Créons un rythme\u202F!"
   },
   "tutorialAddEffects": {
     "en": "Let's add some effects and vocals!",
     "it": "Aggiungiamo effetti e voci!",
-    "fr": "Ajoutons des effets et des voix !"
+    "fr": "Ajoutons des effets et des voix\u202F!"
   },
   "goodJob": {
     "en": "GOOD JOB!",
     "it": "OTTIMO LAVORO!",
-    "fr": "BIEN JOUÉ !"
+    "fr": "BIEN JOUÉ\u202F!"
   },
   "downloadNow": {
     "en": "Download Now",
@@ -22,21 +22,21 @@
   "keepGroovin": {
     "en": "Keep Groovin'!",
     "it": "Continua a suonare!",
-    "fr": "Continue à jouer !"
+    "fr": "Continue à jouer\u202F!"
   },
   "successTitle": {
     "en": "What a hit!",
     "it": "Che successo!",
-    "fr": "Quel succès !"
+    "fr": "Quel succès\u202F!"
   },
   "successMessage": {
     "en": "You unlocked a new\nsample pack!",
     "it": "Hai sbloccato un nuovo pacchetto di campioni!",
-    "fr": "Tu as débloqué un nouveau pack de samples !"
+    "fr": "Tu as débloqué un nouveau pack de samples\u202F!"
   },
   "timeoutTitle": {
     "en": "Time's up!",
     "it": "Tempo scaduto!",
-    "fr": "Temps écoulé !"
+    "fr": "Temps écoulé\u202F!"
   }
 }
