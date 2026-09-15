@@ -30,7 +30,7 @@
   max-height: calc(var(--tooltip-max-height) - 20px * var(--scene-scale));
   color: #000;
   font-size: calc(24px * var(--scene-scale));
-  line-height: 1;
+  line-height: 1.1;
   white-space: normal;
   text-wrap: balance;
   overflow-wrap: anywhere;

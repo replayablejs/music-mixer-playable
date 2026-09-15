@@ -19,7 +19,8 @@ const exitScale = 0.92;
 export function createCelebration(): Celebration {
   const hand = <div class="celebration-hand" aria-hidden="true" />;
   hand.style.backgroundImage = `url("${getSpriteSrc(sprites['thumbs-up-spritesheet'])}")`;
-  const label = <div class="celebration-label">{playable.localization.translate('goodJob')}</div>;
+  const text = <span>{playable.localization.translate('goodJob')}</span>;
+  const label = <div class="celebration-label">{text}</div>;
   const artwork = (
     <div class="celebration-artwork">
       {hand}
@@ -37,6 +38,9 @@ export function createCelebration(): Celebration {
   let started = false;
   let destroyed = false;
 
+  const resizeObserver = new ResizeObserver(fitLabel);
+  resizeObserver.observe(container);
+
   return { container, play, destroy };
 
   function play(onComplete: () => void): void {
@@ -46,6 +50,7 @@ export function createCelebration(): Celebration {
 
     started = true;
     container.hidden = false;
+    fitLabel();
     handAnimation = playThumbsUpAnimation(hand);
     animation = animate([
       [
@@ -75,8 +80,21 @@ export function createCelebration(): Celebration {
     });
   }
 
+  /** Measure untransformed text so the entrance animation cannot affect sizing. */
+  function fitLabel(): void {
+    if (container.hidden || label.clientWidth === 0) {
+      return;
+    }
+    label.style.removeProperty('font-size');
+    const fontSize = parseFloat(getComputedStyle(label).fontSize);
+    if (text.scrollWidth > label.clientWidth) {
+      label.style.fontSize = `${fontSize * (label.clientWidth / text.scrollWidth)}px`;
+    }
+  }
+
   function destroy(): void {
     destroyed = true;
+    resizeObserver.disconnect();
     animation?.stop();
     handAnimation?.stop();
     container.remove();

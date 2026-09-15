@@ -26,7 +26,8 @@
 .music-mixer .celebration-label {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  left: 5%;
+  width: 90%;
   color: white;
   font-size: 15.38cqw;
   line-height: 1.2;
@@ -35,4 +36,8 @@
   -webkit-text-stroke: 1.92cqw var(--celebration-stroke);
   paint-order: stroke fill;
   text-shadow: 0 0 3.85cqw var(--celebration-glow);
+}
+
+.music-mixer .celebration-label > span {
+  display: inline-block;
 }
