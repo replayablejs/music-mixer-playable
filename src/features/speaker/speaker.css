@@ -1,0 +1,120 @@
+.music-mixer .speaker {
+  position: relative;
+  width: min(291px * var(--scene-scale), 100cqw, 100cqh);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  isolation: isolate;
+}
+
+.music-mixer .speaker-pulse {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: white;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.music-mixer .speaker-note {
+  position: absolute;
+  --note-top: var(--speaker-note-top);
+  --note-middle: var(--speaker-note-middle);
+  --note-bottom: var(--speaker-note-bottom);
+}
+
+.music-mixer .speaker-note-single {
+  left: 24%;
+  top: 22%;
+  width: 25%;
+  height: 35%;
+  --note-bottom: var(--speaker-single-note-bottom);
+}
+
+.music-mixer .speaker-note-pair {
+  left: 38%;
+  top: 38%;
+  width: 38%;
+  height: 36%;
+}
+
+.music-mixer .speaker-note span {
+  position: absolute;
+}
+
+.music-mixer .note-bar {
+  background: var(--note-top);
+  transform: skewY(-11deg);
+  border-radius: 12%;
+}
+
+.music-mixer .note-stem {
+  background: linear-gradient(var(--note-top), var(--note-middle) 50%, var(--note-bottom));
+}
+
+.music-mixer .note-head {
+  border-radius: 50%;
+  background: linear-gradient(var(--note-middle), var(--note-bottom));
+}
+
+.music-mixer .speaker-note-single .note-bar {
+  left: 36%;
+  top: 4%;
+  width: 64%;
+  height: 27%;
+}
+
+.music-mixer .speaker-note-single .note-stem {
+  left: 36%;
+  top: 10%;
+  width: 14%;
+  height: 73%;
+}
+
+.music-mixer .speaker-note-single .note-head {
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 37%;
+}
+
+.music-mixer .speaker-note-pair .note-bar {
+  left: 24%;
+  top: 7%;
+  width: 76%;
+  height: 26%;
+}
+
+.music-mixer .speaker-note-pair .note-stem {
+  width: 9%;
+}
+
+.music-mixer .speaker-note-pair .note-stem-left {
+  left: 24%;
+  top: 14%;
+  height: 70%;
+}
+
+.music-mixer .speaker-note-pair .note-stem-right {
+  right: 0;
+  top: 7%;
+  height: 64%;
+}
+
+.music-mixer .speaker-note-pair .note-head {
+  width: 33%;
+  height: 35%;
+}
+
+.music-mixer .speaker-note-pair .note-head-left {
+  left: 0;
+  bottom: 0;
+}
+
+.music-mixer .speaker-note-pair .note-head-right {
+  right: 0;
+  bottom: 13%;
+}

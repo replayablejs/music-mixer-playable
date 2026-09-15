@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Replayable-generated output
+/dist/
+/exports/
+/src/assets/
+/resolved-config.json
+/.site/
+
+# Local Replayable package connection
+/.replayable-local/
+
+# Tool caches and reports
+coverage/
+.turbo/
+*.tsbuildinfo
+__pycache__/
+
+# Local package-manager logs
+pnpm-debug.log*
+
+# OS files
+.DS_Store

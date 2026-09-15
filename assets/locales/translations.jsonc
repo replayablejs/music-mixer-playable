@@ -1,0 +1,42 @@
+{
+  "tutorialMakeBeat": {
+    "en": "Let's make a beat!",
+    "it": "Creiamo un ritmo!",
+    "fr": "Créons un rythme !"
+  },
+  "tutorialAddEffects": {
+    "en": "Let's add some effects and vocals!",
+    "it": "Aggiungiamo effetti e voci!",
+    "fr": "Ajoutons des effets et des voix !"
+  },
+  "goodJob": {
+    "en": "GOOD JOB!",
+    "it": "OTTIMO LAVORO!",
+    "fr": "BIEN JOUÉ !"
+  },
+  "downloadNow": {
+    "en": "Download Now",
+    "it": "Scarica ora",
+    "fr": "Télécharger"
+  },
+  "keepGroovin": {
+    "en": "Keep Groovin'!",
+    "it": "Continua a suonare!",
+    "fr": "Continue à jouer !"
+  },
+  "successTitle": {
+    "en": "What a hit!",
+    "it": "Che successo!",
+    "fr": "Quel succès !"
+  },
+  "successMessage": {
+    "en": "You unlocked a new\nsample pack!",
+    "it": "Hai sbloccato un nuovo pacchetto di campioni!",
+    "fr": "Tu as débloqué un nouveau pack de samples !"
+  },
+  "timeoutTitle": {
+    "en": "Time's up!",
+    "it": "Tempo scaduto!",
+    "fr": "Temps écoulé !"
+  }
+}

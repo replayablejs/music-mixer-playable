@@ -1,0 +1,20 @@
+.music-mixer .persistent-cta {
+  width: calc(300px * var(--scene-scale));
+  max-width: 100%;
+  height: var(--cta-height);
+  padding: 0 calc(12.8px * var(--scene-scale));
+  border: 0;
+  border-radius: calc(19.2px * var(--scene-scale));
+  background: var(--cta-background);
+  color: var(--cta-label);
+  font: inherit;
+  font-size: calc(28.8px * var(--scene-scale));
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.music-mixer .persistent-cta:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}

@@ -1,0 +1,85 @@
+.music-mixer .mixer-pad {
+  will-change: transform;
+  --pad-color: var(--beat-color);
+  --pad-base: var(--mixer-surface);
+  position: relative;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  appearance: none;
+  cursor: pointer;
+  overflow: visible;
+  min-width: 0;
+  min-height: 0;
+  border-radius: calc(6px * var(--scene-scale));
+  background: color-mix(in srgb, var(--pad-color) 20%, var(--pad-base));
+  color: var(--pad-color);
+  transform-origin: center;
+  container-type: size;
+}
+
+.music-mixer .mixer-pad[hidden] {
+  display: none;
+}
+.music-mixer .mixer-pad[data-family='bass'] {
+  --pad-color: var(--bass-color);
+}
+.music-mixer .mixer-pad[data-family='arp'] {
+  --pad-color: var(--arp-color);
+}
+.music-mixer .mixer-pad[data-family='keys'],
+.music-mixer .mixer-pad[data-family='fx'] {
+  --pad-color: var(--keys-color);
+}
+.music-mixer .mixer-pad[data-family='vox'] {
+  --pad-color: var(--vox-color);
+}
+
+.music-mixer .mixer-pad-label {
+  position: absolute;
+  inset: auto 0 10%;
+  text-align: center;
+  font-size: max(13px, min(17cqw, 19cqh));
+  line-height: 1;
+}
+
+.music-mixer .mixer-pad[data-family='beat'][aria-pressed='false'] .mixer-pad-label {
+  color: var(--beat-label-color);
+}
+
+.music-mixer
+  .mixer-pad:is([data-family='keys'], [data-family='fx'])[aria-pressed='false']
+  .mixer-pad-label {
+  color: var(--keys-label-color);
+}
+
+.music-mixer .mixer-pad-selection {
+  position: absolute;
+  inset: 0;
+  background: var(--pad-color);
+  border-radius: inherit;
+  clip-path: circle(0% at 50% 50%);
+}
+
+/* Remove the reveal layer from rendering when inactive, including after cancellation. */
+.music-mixer .mixer-pad-selection[hidden] {
+  display: none;
+}
+
+.music-mixer .mixer-pad[aria-pressed='true'] {
+  color: #000;
+}
+
+.music-mixer .mixer-pad:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.music-mixer .mixer-pad[data-family='fx'] {
+  --fx-opacity: 0.2;
+  background: color-mix(in srgb, var(--pad-color) calc(var(--fx-opacity) * 100%), var(--pad-base));
+}
+
+.music-mixer .mixer-pad[data-family='fx'][aria-pressed='true'] .pad-progress-bar {
+  opacity: var(--fx-opacity);
+}

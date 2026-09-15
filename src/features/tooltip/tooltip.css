@@ -1,0 +1,44 @@
+.music-mixer .tooltip {
+  max-width: 100%;
+  width: calc(310px * var(--scene-scale));
+  max-height: var(--tooltip-max-height);
+}
+
+.music-mixer .tooltip-artwork {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: calc(10px * var(--scene-scale)) calc(12px * var(--scene-scale));
+  background-color: var(--tooltip-background);
+  border-radius: calc(12px * var(--scene-scale));
+}
+
+.music-mixer .tooltip-artwork::before {
+  content: '';
+  position: absolute;
+  left: calc(-29px - 1.5px * var(--scene-scale));
+  top: calc(50% - 17px);
+  transform: rotate(-90deg) scale(calc(0.5 * var(--scene-scale)));
+  width: 58px;
+  height: 34px;
+  background-color: inherit;
+  clip-path: path('M 0 20 C 9 20 19 5 25 1 Q 29 -2 33 1 C 39 5 49 20 58 20 L 58 34 L 0 34 Z');
+}
+
+.music-mixer .tooltip-label {
+  display: block;
+  max-height: calc(var(--tooltip-max-height) - 20px * var(--scene-scale));
+  color: #000;
+  font-size: calc(24px * var(--scene-scale));
+  line-height: 1;
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.music-mixer .tooltip-label > span {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}

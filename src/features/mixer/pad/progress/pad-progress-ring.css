@@ -1,0 +1,30 @@
+.music-mixer .mixer-pad-ring {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  width: 39%;
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+}
+
+/* Eight tangent strokes centered between the cardinal directions. */
+.music-mixer .mixer-ring-segment {
+  position: absolute;
+  inset: 0;
+  transform: rotate(calc(var(--segment) * 45deg + 22.5deg));
+}
+
+.music-mixer .mixer-ring-segment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 30%;
+  height: 9%;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.music-mixer .mixer-ring-segment.active {
+  color: #fff;
+}

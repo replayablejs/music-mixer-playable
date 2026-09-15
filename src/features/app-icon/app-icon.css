@@ -1,0 +1,82 @@
+.music-mixer .app-icon {
+  width: 100%;
+  aspect-ratio: 1;
+  box-sizing: border-box;
+  padding: 12.5%;
+  border-radius: 18%;
+  background: linear-gradient(135deg, var(--icon-background-top), var(--icon-background-bottom));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 9%;
+  container-type: inline-size;
+}
+
+.music-mixer .app-icon-tile {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 25%;
+}
+
+.music-mixer .app-icon-diamond {
+  background: linear-gradient(25deg, #ff0780, #ff523e 55%, #ff9d08);
+}
+
+.music-mixer .app-icon-diamond > span {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: 4.5cqw solid #9f153e;
+  border-radius: 8%;
+  transform: rotate(45deg);
+}
+
+.music-mixer .app-icon-circle {
+  background: linear-gradient(25deg, #8521ed, #bf32ff 65%, #df43fd);
+}
+
+.music-mixer .app-icon-circle > span,
+.music-mixer .app-icon-square > span {
+  width: 59%;
+  height: 59%;
+  box-sizing: border-box;
+  border: 4.5cqw solid #4b168c;
+  border-radius: 50%;
+}
+
+.music-mixer .app-icon-square {
+  background: linear-gradient(25deg, #ff9e00, #ffcc08);
+}
+
+.music-mixer .app-icon-square > span {
+  border-color: #b16b00;
+  border-radius: 12%;
+}
+
+.music-mixer .app-icon-cross {
+  background: linear-gradient(25deg, #24b9ea, #00dbbf);
+}
+
+.music-mixer .app-icon-cross > span {
+  position: relative;
+  width: 61%;
+  height: 61%;
+}
+
+.music-mixer .app-icon-cross > span::before,
+.music-mixer .app-icon-cross > span::after {
+  content: '';
+  position: absolute;
+  top: 41%;
+  left: 0;
+  width: 100%;
+  height: 18%;
+  border-radius: 999px;
+  background: #087c97;
+  transform: rotate(45deg);
+}
+
+.music-mixer .app-icon-cross > span::after {
+  transform: rotate(-45deg);
+}

@@ -1,0 +1,4 @@
+.music-mixer .logo {
+  width: var(--logo-height);
+  height: var(--logo-height);
+}

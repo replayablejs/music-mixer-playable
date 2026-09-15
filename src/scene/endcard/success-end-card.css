@@ -1,0 +1,36 @@
+.music-mixer .success-end-card {
+  grid-template-rows: 80em 220em 80em 120em 47.5em 105em 147.5em;
+}
+
+.music-mixer .success-end-card .end-card-icon {
+  grid-row: 2;
+  width: 204em;
+}
+
+.music-mixer .success-end-card .end-card-title {
+  grid-row: 3;
+  font-size: 61em;
+  color: var(--success-title-color);
+}
+
+.music-mixer .success-end-card-subtitle {
+  grid-row: 4;
+  margin: 0;
+  font-size: 29em;
+  line-height: 1.1;
+  text-align: center;
+  white-space: pre-line;
+  opacity: 0;
+}
+
+.music-mixer .success-end-card .end-card-action {
+  grid-row: 6;
+}
+
+.music-mixer[data-orientation='landscape'] .success-end-card {
+  grid-template-rows: 55em 190em 130em 50em 42.5em 105em 67.5em;
+}
+
+.music-mixer[data-orientation='landscape'] .success-end-card .end-card-icon {
+  width: 170em;
+}

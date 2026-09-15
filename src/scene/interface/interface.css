@@ -1,0 +1,50 @@
+.music-mixer .interface:not([hidden]) {
+  display: contents;
+}
+
+.music-mixer .scene-header {
+  grid-column: 1;
+  grid-row: header;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  z-index: 1;
+}
+
+.music-mixer .scene-header .logo {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+/* Keep the speech bubble beside the logo, including after mixer expansion. */
+.music-mixer .tooltip-slot {
+  grid-column: 3;
+  grid-row: 1;
+  min-width: 0;
+  width: 100%;
+  max-height: var(--tooltip-max-height);
+  box-sizing: border-box;
+  padding-left: calc(24px * var(--scene-scale));
+  padding-right: calc(8px * var(--scene-scale));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  justify-items: start;
+  pointer-events: none;
+}
+
+.music-mixer .interface > .persistent-cta {
+  grid-column: 1;
+  grid-row: footer;
+  justify-self: center;
+  align-self: end;
+  z-index: 1;
+}
+
+@media (aspect-ratio > 9/5) {
+  .music-mixer[data-orientation='landscape'] .persistent-cta {
+    grid-row: header;
+    justify-self: start;
+    align-self: start;
+  }
+}

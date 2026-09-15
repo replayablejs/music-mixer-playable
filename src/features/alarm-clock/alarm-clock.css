@@ -1,0 +1,149 @@
+.music-mixer .alarm-clock {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 260 / 204;
+  container-type: inline-size;
+}
+
+.music-mixer .alarm-clock-face {
+  position: absolute;
+  left: 15.38%;
+  top: 11.76%;
+  width: 69.23%;
+  height: 88.24%;
+  box-sizing: border-box;
+  border: 5.77cqw solid transparent;
+  border-radius: 50%;
+  background:
+    linear-gradient(90deg, #fff 50%, #f1f8f8 50%) padding-box,
+    linear-gradient(90deg, var(--clock-rim-light) 50%, var(--clock-rim-dark) 50%) border-box;
+}
+
+.music-mixer .alarm-clock-tick {
+  position: absolute;
+  inset: 0;
+}
+
+.music-mixer .alarm-clock-tick::after {
+  content: '';
+  position: absolute;
+  top: 6%;
+  left: 49%;
+  width: 2%;
+  height: 7%;
+  background: #c4cdd8;
+  border-radius: 2cqw;
+}
+
+.music-mixer .alarm-clock-tick[data-major='true']::after {
+  left: 47.5%;
+  width: 5%;
+  height: 12%;
+  background: #89919f;
+}
+
+.music-mixer .alarm-clock-hand {
+  position: absolute;
+  left: 47.5%;
+  bottom: 44%;
+  width: 5%;
+  height: 45%;
+  background: #535965;
+  clip-path: polygon(38% 0, 62% 0, 100% 92%, 80% 100%, 20% 100%, 0 92%);
+  transform-origin: 50% 87%;
+  transform: rotate(-52deg);
+}
+
+.music-mixer .alarm-clock-hour {
+  height: 35%;
+  transform: rotate(51deg);
+}
+
+.music-mixer .alarm-clock-leg {
+  position: absolute;
+  bottom: 0;
+  width: 5%;
+  height: 18%;
+  background: #fcffff;
+  border-radius: 3cqw;
+}
+
+.music-mixer .alarm-clock-leg-left {
+  left: 25%;
+  transform: rotate(40deg);
+}
+
+.music-mixer .alarm-clock-leg-right {
+  right: 25%;
+  transform: rotate(-40deg);
+}
+
+.music-mixer .alarm-clock-stem {
+  position: absolute;
+  left: 48.5%;
+  top: 5%;
+  width: 3%;
+  height: 10%;
+  background: #fff;
+}
+
+.music-mixer .alarm-clock-button {
+  position: absolute;
+  top: 2%;
+  left: 45.4%;
+  width: 9.2%;
+  height: 5%;
+  background: var(--clock-button);
+  border-radius: 4cqw;
+}
+
+.music-mixer .alarm-clock-bell {
+  position: absolute;
+  top: 1%;
+  width: 28%;
+  height: 21%;
+  border-radius: 100% 100% 0 0 / 180% 180% 0 0;
+  background: linear-gradient(90deg, #ff9f00 42%, #ffc739 42%);
+}
+
+.music-mixer .alarm-clock-bell-left {
+  left: 10%;
+  transform: rotate(-37deg);
+}
+
+.music-mixer .alarm-clock-bell-right {
+  right: 10%;
+  transform: rotate(37deg);
+  background: linear-gradient(90deg, #ffc739 58%, #ff9f00 58%);
+}
+
+.music-mixer .alarm-clock-ringing {
+  position: absolute;
+  top: 25%;
+  width: 22%;
+  height: 55%;
+  box-sizing: border-box;
+  border: 2cqw solid transparent;
+  border-left-color: #c6d0d3;
+  border-radius: 50%;
+}
+
+.music-mixer .alarm-clock-ringing::after {
+  content: '';
+  position: absolute;
+  inset: 9% 0 9% 18%;
+  border: 2cqw solid transparent;
+  border-left-color: #c6d0d3;
+  border-radius: 50%;
+}
+
+.music-mixer .alarm-clock-ringing-left {
+  left: 0;
+  transform: rotate(5deg);
+}
+
+.music-mixer .alarm-clock-ringing-right {
+  right: 0;
+  top: 38%;
+  transform: rotate(185deg);
+}

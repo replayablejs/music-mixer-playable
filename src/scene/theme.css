@@ -1,0 +1,69 @@
+/* Liquid DnB is the default palette. Components consume roles, not pack names. */
+.music-mixer {
+  --background-top: #481f82;
+  --background-bottom: #000000;
+  --endcard-background-top: #cc58fe;
+  --endcard-background-bottom: #591b92;
+
+  --cta-background: #e82e70;
+  --endcard-cta-background: #f20b6a;
+  --cta-label: #ffffff;
+  --tooltip-background: #ecaa2e;
+  --success-title-color: #f8cd46;
+
+  --mixer-surface: #211332;
+  --beat-color: #3f88de;
+  --beat-label-color: #69a6ed;
+  --bass-color: #6cb052;
+  --arp-color: #4baabe;
+  --keys-color: #845df6;
+  --keys-label-color: #ab91ff;
+  --vox-color: #e0ae48;
+
+  --speaker-note-top: #00c3b7;
+  --speaker-note-middle: #009fbd;
+  --speaker-note-bottom: #ab2fc5;
+  --speaker-single-note-bottom: #526fc0;
+  --celebration-stroke: #531976;
+  --celebration-glow: #a1206b;
+  --icon-background-top: #612483;
+  --icon-background-bottom: #281044;
+  --clock-rim-light: #b58aff;
+  --clock-rim-dark: #aa79ff;
+  --clock-button: #ff4f83;
+}
+
+/* First Light: warm highlights over a midnight-blue stage. */
+.music-mixer[data-theme='first-light'] {
+  --background-top: #142c49;
+  --background-bottom: #050c18;
+  --endcard-background-top: #34597a;
+  --endcard-background-bottom: #101d35;
+
+  --cta-background: #ff907d;
+  --endcard-cta-background: #ff907d;
+  --cta-label: #18263a;
+  --tooltip-background: #f7be55;
+  --success-title-color: #ffdb8a;
+
+  --mixer-surface: #101e32;
+  --beat-color: #f7be55;
+  --beat-label-color: #f7be55;
+  --bass-color: #83c9a0;
+  --arp-color: #70c9df;
+  --keys-color: #b5a0eb;
+  --keys-label-color: #b5a0eb;
+  --vox-color: #f29db7;
+
+  --speaker-note-top: #f7be55;
+  --speaker-note-middle: #f39a60;
+  --speaker-note-bottom: #dd677f;
+  --speaker-single-note-bottom: #e88763;
+  --celebration-stroke: #142c49;
+  --celebration-glow: #d58458;
+  --icon-background-top: #34597a;
+  --icon-background-bottom: #101d35;
+  --clock-rim-light: #8dc7df;
+  --clock-rim-dark: #5a9cbf;
+  --clock-button: #ff907d;
+}

@@ -1,0 +1,25 @@
+.music-mixer .pad-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.music-mixer .pad-particles[hidden] {
+  display: none;
+}
+
+.music-mixer .pad-particle {
+  position: absolute;
+  /* Scale the particle footprint relative to the pad. */
+  width: calc(100% * 64 / 140);
+  aspect-ratio: 1;
+  background: radial-gradient(
+    circle,
+    var(--pad-color) 0%,
+    color-mix(in srgb, var(--pad-color) 65%, transparent) 12%,
+    color-mix(in srgb, var(--pad-color) 15%, transparent) 35%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+}

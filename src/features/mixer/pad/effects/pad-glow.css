@@ -1,0 +1,11 @@
+.music-mixer .mixer-pad::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow:
+    0 0 calc(8px * var(--scene-scale)) var(--pad-color),
+    0 0 calc(24px * var(--scene-scale)) calc(6px * var(--scene-scale)) var(--pad-color);
+  opacity: var(--glow-opacity, 0);
+  pointer-events: none;
+}

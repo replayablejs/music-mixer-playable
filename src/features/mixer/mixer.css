@@ -1,0 +1,53 @@
+.music-mixer .mixer {
+  --pad-gap: calc(12px * var(--scene-scale));
+  --group-gap: calc(20px * var(--scene-scale));
+  --columns: 4;
+  --rows: 2;
+  --horizontal-gaps: calc(3 * var(--pad-gap));
+  --width-limit: 100cqw;
+  --height-limit: 100cqh;
+  /* Subtract gutters before choosing one square size for every pad. */
+  --pad-size: min(
+    calc((var(--width-limit) - var(--horizontal-gaps)) / var(--columns)),
+    calc((var(--height-limit) - (var(--rows) - 1) * var(--pad-gap)) / var(--rows))
+  );
+  display: grid;
+  grid-template-columns: repeat(4, var(--pad-size));
+  grid-template-rows: repeat(2, var(--pad-size));
+  gap: var(--pad-gap);
+}
+
+.music-mixer .mixer-pad {
+  grid-column: var(--compact-column);
+  grid-row: var(--compact-row);
+}
+
+.music-mixer .mixer[data-mode='expanded'] {
+  grid-template-columns: repeat(2, var(--pad-size)) var(--group-gap) repeat(2, var(--pad-size));
+  --rows: 6;
+  --horizontal-gaps: calc(4 * var(--pad-gap) + var(--group-gap));
+  grid-template-rows: repeat(6, var(--pad-size));
+}
+
+.music-mixer .mixer[data-mode='expanded'] .mixer-pad {
+  grid-column: var(--expanded-column);
+  grid-row: var(--expanded-row);
+}
+
+.music-mixer[data-orientation='landscape'] .mixer-pad {
+  grid-column: var(--compact-landscape-column);
+  grid-row: var(--compact-landscape-row);
+}
+
+.music-mixer[data-orientation='landscape'] .mixer[data-mode='expanded'] {
+  --columns: 8;
+  --rows: 3;
+  --horizontal-gaps: calc(8 * var(--pad-gap) + var(--group-gap));
+  grid-template-columns: repeat(4, var(--pad-size)) var(--group-gap) repeat(4, var(--pad-size));
+  grid-template-rows: repeat(3, var(--pad-size));
+}
+
+.music-mixer[data-orientation='landscape'] .mixer[data-mode='expanded'] .mixer-pad {
+  grid-column: var(--expanded-landscape-column);
+  grid-row: var(--expanded-landscape-row);
+}

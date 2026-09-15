@@ -1,0 +1,98 @@
+.music-mixer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--game-font), Arial, sans-serif;
+  background: linear-gradient(var(--background-top), var(--background-bottom));
+  user-select: none;
+}
+
+/* Replayable measures this rectangle; content layout stays relative to it. */
+.music-mixer .scene-content {
+  --logo-height: calc(100px * var(--scene-scale));
+  --tooltip-max-height: calc(var(--logo-height) * 0.8);
+  --cta-height: calc(64px * var(--scene-scale));
+  position: absolute;
+  left: var(--safe-left);
+  top: var(--safe-top);
+  width: var(--safe-width);
+  height: var(--safe-height);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: [header] auto [gameplay] minmax(0, 1fr);
+  row-gap: calc(24px * var(--scene-scale));
+}
+
+.music-mixer .scene-content:has(.persistent-cta) {
+  grid-template-rows: [header] auto [gameplay] minmax(0, 1fr) [footer] auto;
+}
+
+.music-mixer .gameplay {
+  grid-column: 1;
+  grid-row: gameplay;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  z-index: 0;
+}
+
+@media (aspect-ratio > 9/5) {
+  .music-mixer[data-orientation='landscape'] .scene-content {
+    grid-template-rows: [header] auto [gameplay] minmax(0, 1fr);
+  }
+}
+
+/* Real layout regions: speaker 1/3, mixer 2/3, after reserving UI space. */
+.music-mixer .gameplay-layout {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0;
+}
+
+.music-mixer .speaker-space,
+.music-mixer .mixer-space {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  container-type: size;
+}
+
+/* Keep expanding speaker pulses beneath the entire mixer, including animated pads. */
+.music-mixer .speaker-space {
+  z-index: 0;
+}
+
+.music-mixer .mixer-space {
+  z-index: 1;
+}
+
+.music-mixer[data-orientation='landscape'] .gameplay-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.music-mixer .gameplay-layout:has(.mixer[data-mode='expanded']) {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.music-mixer .gameplay-layout:has(.mixer[data-mode='expanded']) .speaker-space {
+  display: none;
+}
+
+.music-mixer[data-orientation='landscape'] .speaker-space {
+  padding: calc(50px * var(--scene-scale));
+}
+
+/* Wider portrait screens have room for extra space beside the mixer. */
+@media (min-aspect-ratio: 2/3) {
+  .music-mixer[data-orientation='portrait'] .mixer-space {
+    padding-inline: calc(38px * var(--scene-scale));
+  }
+}

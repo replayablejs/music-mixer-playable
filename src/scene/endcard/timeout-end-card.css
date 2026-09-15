@@ -1,0 +1,22 @@
+.music-mixer .timeout-end-card {
+  grid-template-rows: 80em 100em 260em 107.5em 105em 147.5em;
+}
+
+.music-mixer .timeout-end-card .end-card-title {
+  grid-row: 2;
+  font-size: 50em;
+  color: white;
+}
+
+.music-mixer .timeout-end-card .end-card-icon {
+  grid-row: 3;
+  width: 260em;
+}
+
+.music-mixer .timeout-end-card .end-card-action {
+  grid-row: 5;
+}
+
+.music-mixer[data-orientation='landscape'] .timeout-end-card {
+  grid-template-rows: 50em 100em 300em 17.5em 105em 67.5em;
+}

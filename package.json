@@ -1,0 +1,74 @@
+{
+  "name": "music-mixer-playable",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#jsx": "./src/factories/jsx.ts",
+    "#registries": "./src/assets/registries/index.ts",
+    "#types/*": "./src/types/*.ts"
+  },
+  "scripts": {
+    "prepare": "husky",
+    "dev": "replayable dev",
+    "dev:liquiddnb": "replayable dev --version liquiddnb",
+    "dev:first-light": "replayable dev --version first-light",
+    "build": "replayable build",
+    "export": "replayable export",
+    "typecheck": "tsc --noEmit",
+    "preview": "python3 -m http.server 4174 --bind 127.0.0.1 --directory exports",
+    "replayable:local": "node scripts/replayable-local.mts",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck",
+    "catalog": "node scripts/build-catalog.mts",
+    "catalog:preview": "python3 -m http.server 4176 --bind 127.0.0.1 --directory .site",
+    "dev:liquiddnb:no-tutorial": "replayable dev --version liquiddnb-no-tutorial",
+    "dev:first-light:no-tutorial": "replayable dev --version first-light-no-tutorial"
+  },
+  "dependencies": {
+    "@replayablejs/config": "0.1.0-alpha.4",
+    "@replayablejs/devtools": "0.1.0-alpha.4",
+    "@replayablejs/runtime": "0.1.0-alpha.4",
+    "@replayablejs/tween": "0.1.0-alpha.4"
+  },
+  "devDependencies": {
+    "@replayablejs/cli": "0.1.0-alpha.4",
+    "@replayablejs/export": "0.1.0-alpha.4",
+    "@types/node": "^24.13.4",
+    "hast-util-to-html": "^9.0.5",
+    "hastscript": "^9.0.1",
+    "husky": "9.1.7",
+    "lint-staged": "17.5.1",
+    "oxfmt": "0.63.0",
+    "oxlint": "1.78.0",
+    "oxlint-tsgolint": "7.0.2001",
+    "typescript": "7.0.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,mjs,cjs,ts,tsx,mts,cts}": [
+      "oxfmt --no-error-on-unmatched-pattern",
+      "oxlint --no-error-on-unmatched-pattern"
+    ],
+    "*.{json,jsonc,json5,yml,yaml,md,mdx,css,scss,less,html,vue,graphql,gql}": "oxfmt --no-error-on-unmatched-pattern"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@10.32.1",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@ffmpeg-installer/darwin-arm64",
+      "@ffmpeg-installer/darwin-x64",
+      "@ffmpeg-installer/linux-arm",
+      "@ffmpeg-installer/linux-arm64",
+      "@ffmpeg-installer/linux-ia32",
+      "@ffmpeg-installer/linux-x64",
+      "@ffmpeg-installer/win32-ia32",
+      "@ffmpeg-installer/win32-x64"
+    ]
+  }
+}

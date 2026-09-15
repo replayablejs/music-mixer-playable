@@ -1,0 +1,15 @@
+.music-mixer .hand-indicator {
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  width: 85%;
+  height: auto;
+  translate: -40% -5%;
+  transform-origin: 40% 5%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.music-mixer .mixer-pad:has(.hand-indicator) {
+  z-index: 3;
+}
