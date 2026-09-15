@@ -25,7 +25,8 @@
 
 .music-mixer .celebration-label {
   position: absolute;
-  bottom: 0;
+  /* The final pose ends around 61%; the remaining sheet area is transparent. */
+  top: 67%;
   left: 5%;
   width: 90%;
   color: white;
