@@ -142,12 +142,12 @@ export preview commands also require Python 3.
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev:liquiddnb
+pnpm dev:liquiddnb:tutorial
 # Or:
-pnpm dev:first-light
+pnpm dev:first-light:tutorial
 # Start directly with the full mixer:
-pnpm dev:liquiddnb:no-tutorial
-pnpm dev:first-light:no-tutorial
+pnpm dev:liquiddnb:free-play
+pnpm dev:first-light:free-play
 ```
 
 `pnpm dev` starts the default version. The root
@@ -241,18 +241,85 @@ workspace settings provide formatting and lint fixes on save.
 
 ## Work on Replayable locally
 
-For contributors developing the toolkit alongside this example, stop the development
-server and install the toolkit checkout’s pnpm dependencies first.
+Use this playable to develop and test Replayable against a complete application:
+audio, localized assets, multiple creative versions, and network exports. Connect
+a local toolkit checkout to try changes before publishing a Replayable release.
+
+The [local development helper](scripts/replayable-local.mts) builds the required
+Replayable packages and installs their packed tarballs, including their Replayable
+dependencies. This exercises the packages as a consuming project would install them.
+The connection is a snapshot: toolkit edits take effect after refreshing it.
+
+This helper currently supports macOS and Linux. On Windows, use WSL for this workflow.
+
+### 1. Prepare the toolkit checkout
+
+Clone Replayable wherever you keep your projects and install its dependencies.
+Replace `/path/to/replayable` in the commands below with the actual path to your
+cloned Replayable repository. If you already have a checkout, skip the clone command.
 
 ```sh
-pnpm replayable:local connect ../replayable
+git clone https://github.com/replayablejs/replayable.git /path/to/replayable
+pnpm --dir /path/to/replayable install --frozen-lockfile
+```
+
+### 2. Connect and run the playable
+
+Stop the playable's development server first. Run these commands from this project:
+
+```sh
+pnpm replayable:local connect /path/to/replayable
+pnpm dev:liquiddnb:tutorial
+```
+
+You can also use `pnpm dev:first-light:tutorial` or either free-play version. The playable
+now uses the packages from that Replayable checkout.
+
+### 3. Test toolkit changes
+
+Edit Replayable in its checkout. Stop the playable's development server, refresh the
+packages, and restart it:
+
+```sh
 pnpm replayable:local refresh
+pnpm dev:liquiddnb:tutorial
+```
+
+`refresh` remembers the checkout, rebuilds the required packages, and installs fresh
+tarballs. If you have already built those packages yourself, use
+`pnpm replayable:local refresh --skip-build` to pack the existing output.
+
+To verify the full build and export workflow, stop the development server and run:
+
+```sh
+pnpm build
+pnpm check
+pnpm catalog
+pnpm catalog:preview
+```
+
+The catalog lets you try every preview and download the network exports produced
+with your local toolkit changes.
+
+### 4. Restore published dependencies
+
+Stop the development server before disconnecting:
+
+```sh
 pnpm replayable:local restore
 ```
 
-The helper builds and packs local packages, then installs them temporarily. Restore
-published dependencies before committing dependency files. Run
-`pnpm replayable:local --help` for more options.
+This restores the saved `package.json` and `pnpm-lock.yaml`, reinstalls their
+dependencies, and removes the temporary packages. Your source changes in both
+repositories remain intact.
+
+The helper temporarily changes dependency files and keeps its backup and tarballs
+in the ignored `.replayable-local/` directory. Restore before committing this
+project's dependency files. Avoid editing those files while connected: the helper
+refuses to overwrite changes made after connection.
+
+Use `pnpm replayable:local status` to check the connection, or
+`pnpm replayable:local --help` for command options.
 
 ## Asset rights
 
