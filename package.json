@@ -35,6 +35,7 @@
     "@replayablejs/tween": "0.1.0-alpha.4"
   },
   "devDependencies": {
+    "@replayablejs/assets": "0.1.0-alpha.4",
     "@replayablejs/cli": "0.1.0-alpha.4",
     "@replayablejs/export": "0.1.0-alpha.4",
     "@types/node": "^24.13.4",
