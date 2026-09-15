@@ -4,6 +4,11 @@ export interface CatalogExport {
   size: number;
 }
 
+export interface CatalogTestingTool {
+  name: string;
+  url: string;
+}
+
 export interface CatalogLanguage {
   code: string;
   exports: CatalogExport[];

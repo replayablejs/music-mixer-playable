@@ -1,6 +1,7 @@
 import { toHtml } from 'hast-util-to-html';
 import { h } from 'hastscript';
 
+import { testingTools } from './testing-tools.mts';
 import type { CatalogExport, CatalogLanguage, CatalogPack } from './types.mts';
 
 const languages = new Intl.DisplayNames(['en'], { type: 'language' });
@@ -40,7 +41,7 @@ export function renderCatalog(packs: CatalogPack[]): string {
           ),
           h(
             'p.help',
-            'Play opens a standalone browser preview. Download a network-ready HTML or ZIP export for testing or production campaigns.',
+            'Play opens a standalone browser preview. Download a network-ready HTML or ZIP export for testing or production campaigns. Each network download includes testing tools or setup guides. Use the matching network export; some tools require an account or mobile app.',
           ),
         ]),
         h('main', packs.map(renderPackCard)),
@@ -95,6 +96,7 @@ function renderLanguage(language: CatalogLanguage) {
 }
 
 function renderExport(entry: CatalogExport) {
+  const tools = testingTools[entry.network] ?? [];
   const format = entry.href.split('.').at(-1)?.toUpperCase();
   const size = new Intl.NumberFormat('en', { maximumFractionDigits: 2 }).format(
     entry.size / 1_000_000,
@@ -105,5 +107,12 @@ function renderExport(entry: CatalogExport) {
       h('span', `Download ${networkNames[entry.network] ?? entry.network}`),
       h('span.file-info', `${format} · ${size} MB ↓`),
     ]),
+    ...tools.map((tool) =>
+      h(
+        'a.testing-tool',
+        { href: tool.url, target: '_blank', rel: 'noopener noreferrer' },
+        `${tool.name} ↗`,
+      ),
+    ),
   ]);
 }

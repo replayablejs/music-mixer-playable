@@ -123,6 +123,12 @@ summary {
   font-size: 13px;
   white-space: nowrap;
 }
+.testing-tool {
+  display: block;
+  padding: 0 0 12px;
+  color: var(--accent);
+  font-size: 13px;
+}
 a:hover {
   text-decoration: underline;
 }
