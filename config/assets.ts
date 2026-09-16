@@ -3,24 +3,13 @@ import type { ReplayableAssetsConfigInput } from '@replayablejs/config';
 export default {
   sourceDir: 'assets',
   outDir: 'src/assets/resources',
-  bundles: {
-    secondary: {
-      include: ['sounds/**', 'sprites/thumbs-up-spritesheet.png'],
-      // The eight compact pads stay in primary for either music pack.
-      exclude: [
-        'sounds/*_beat_{2,4}.*',
-        'sounds/*_bass_{1,4}.*',
-        'sounds/*_arp_{1,4}.*',
-        'sounds/*_keys_{1,3}.*',
-      ],
-    },
-  },
   assets: {
     sprites: [
+      // An empty rule enables default processing for the category.
       {},
       {
+        // Select localized artwork at build time; resize 1254×1254 sources to 128×128.
         match: 'hand{,.*}.png',
-        // Localized source artwork is 1254×1254; deliver it at 128×128.
         options: { scale: 128 / 1254 },
       },
     ],
@@ -32,10 +21,12 @@ export default {
         options: { bitrate: 96, channels: 'source', sampleRate: 44100 },
       },
       {
+        // Lower bitrate keeps the longer First Light pack compact.
         match: 'firstlight_*',
         options: { bitrate: 64, channels: 'source', sampleRate: 44100 },
       },
     ],
+    // Convert to WOFF2, retaining basic characters and the selected locale's glyphs.
     fonts: [{ options: { family: 'Inter' } }],
   },
   emit: {

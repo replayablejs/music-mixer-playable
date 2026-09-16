@@ -16,6 +16,7 @@ export default {
     type: 'number',
     default: 2,
     range: { min: 0.5, max: 10, step: 0.5 },
+    // Editor visibility only; gameplay checks the hint parameter separately.
     when: { param: 'hint', equals: true },
     description: 'Seconds without interaction before showing the hint.',
   },

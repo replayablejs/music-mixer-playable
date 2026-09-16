@@ -106,7 +106,7 @@ selection, resizing, and output encoding during the build. The delivered image i
 
 ## Bundle assignments follow the version
 
-[config/assets.ts](config/assets.ts) defines the default loading split for guided versions:
+[config/versions.ts](config/versions.ts) defines the loading split selected by guided versions:
 
 | Bundle    | Contents                                                              | Loading                                                 |
 | --------- | --------------------------------------------------------------------- | ------------------------------------------------------- |
@@ -118,9 +118,9 @@ celebration, then expand to all 24 pads. **Free-play versions** show all 24 pads
 immediately, skip the tutorial and celebration, and exclude the thumbs-up asset
 from the export. Idle hints remain available in both, controlled by [config/params.ts](config/params.ts).
 
-[config/versions.ts](config/versions.ts) sets `assets.bundles: {}` for free play,
-so all 24 sounds load in primary before the scene appears. Guided versions retain
-the eight/sixteen split. There are no extra waits before interaction or expansion.
+[config/versions.ts](config/versions.ts) applies this split only to guided versions.
+Free play inherits the project's default primary-only loading, so all 24 sounds
+load before the scene appears. There are no extra waits before interaction or expansion.
 Secondary defers runtime loading and decoding; its bytes are still included in a
 standalone export. Asset exclusion, by contrast, removes the unused asset entirely.
 
@@ -156,7 +156,7 @@ pnpm dev:first-light:free-play
 
 | Configuration                             | Controls                                                                 |
 | ----------------------------------------- | ------------------------------------------------------------------------ |
-| [assets.ts](config/assets.ts)             | Source assets, processing, resizing, and primary/secondary bundles.      |
+| [assets.ts](config/assets.ts)             | Source assets, processing, and resizing.                                 |
 | [versions.ts](config/versions.ts)         | Music-pack and tutorial combinations, with per-version asset exclusions. |
 | [params.ts](config/params.ts)             | Music-pack selection, tutorial, and idle-hint defaults.                  |
 | [localization.ts](config/localization.ts) | Languages and fallback language for text and artwork.                    |

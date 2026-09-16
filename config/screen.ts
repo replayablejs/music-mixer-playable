@@ -1,6 +1,7 @@
 import type { ReplayableScreenInput } from '@replayablejs/config';
 
 export default {
+  // Logical design dimensions, not physical device pixels.
   orientations: {
     portrait: {
       enabled: true,

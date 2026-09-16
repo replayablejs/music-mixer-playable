@@ -11,6 +11,7 @@ import screen from './config/screen.ts';
 import store from './config/store.ts';
 import versions from './config/versions.ts';
 
+// Overrides resolve project → version → network; exclusions accumulate.
 export default defineConfig({
   name: 'music-mixer-playable',
   networks,
